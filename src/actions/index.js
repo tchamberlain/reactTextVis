@@ -22,7 +22,7 @@ export const requestPosts = reddit => ({
 export const receivePosts = (reddit, json) => ({
   type: RECEIVE_POSTS,
   reddit,
-  posts: Object.keys(json),
+  posts: json,
   receivedAt: Date.now()
 })
 

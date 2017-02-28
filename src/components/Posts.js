@@ -1,16 +1,21 @@
 import React, { PropTypes } from 'react'
+import Words from "./Words"
 
-const Posts = ({posts}) => (
+
+const Posts = ({data}) => (
   <ul>
-    {console.log('the posts:',posts)}
-    {posts.map((post, i) =>
-      <li key={i}>{post}</li>
+    {console.log('the data:',data)}
+    {Object.keys(data).map((state, i) =>
+      <div>
+        <li key={i}>{state}</li>
+          <Words words={data[state]} />
+      </div>
     )}
   </ul>
 )
 
 Posts.propTypes = {
-  posts: PropTypes.array.isRequired
+  data: PropTypes.object.isRequired
 }
 
 export default Posts
