@@ -85,7 +85,7 @@ const mapStateToProps = state => {
     selectedReddit,
     posts,
     isFetching,
-    lastUpdated
+    lastUpdated,
   }
 }
 

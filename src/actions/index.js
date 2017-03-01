@@ -29,15 +29,13 @@ export const receivePosts = (reddit, json) => ({
 const fetchPosts = reddit => dispatch => {
   dispatch(requestPosts(reddit))
   var myPromise = new Promise(function(resolve, reject){
-      d3.json("./mission_stmt_by_state.json", function(error, data){
-          // console.log('in d3, got data', data)
+      // d3.json("./mission_stmt_by_state.json", function(error, data){
+      //     resolve(data);
+      // })
+      d3.json("./compare.json", function(error, data){
           resolve(data);
       })
   });
-  // d3.json("./mission_stmt_by_state.json", function(error, data) {
-  //   console.log('in d3 fetch', data)
-  // })
-  // console.log('myPromise',myPromise)
   return myPromise
     .then(json => dispatch(receivePosts(reddit, json)))
 }
